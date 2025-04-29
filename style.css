@@ -1,0 +1,52 @@
+:root {
+    --checkbox-checked: url("./assets/images/check.png") center / 0.5rem no-repeat #288cff;
+    --checkbox-side: 1rem;
+    --checkbox-border: 1px solid #ced4da;
+    --checkbox-radius: 0.3rem;
+    --checkbox-label-before-left: -1.5rem;
+  }
+  
+  body {
+    font: 18px/1.5 sans-serif;
+  
+    background: #f8fafc;
+  }
+  
+  .hexlet-control {
+    padding-left: 2rem;
+  }
+  
+  .hexlet-checkbox {
+    position: absolute;
+  
+    opacity: 0;
+  }
+  
+  .hexlet-checkbox-label {
+    cursor: pointer;
+  
+    position: relative;
+  }
+  
+  .hexlet-checkbox-label::before {
+    width: var(--checkbox-side);
+    height: var(--checkbox-side);
+    border: var(--checkbox-border);
+    border-radius: var(--checkbox-radius);
+  
+    position: absolute;
+    top: 0;
+    left: var(--checkbox-label-before-left);
+  
+    content: "";
+  }
+  
+  .hexlet-checkbox-label:hover::before {
+    background: var(--checkbox-checked);
+    opacity: 0.5;
+  }
+  
+  .hexlet-checkbox:checked ~ .hexlet-checkbox-label::before {
+    background: var(--checkbox-checked);
+    opacity: 1;
+  }
